@@ -2,7 +2,7 @@ MIN_LENGTH = 9
 
 def main():
     password = get_password()
-    print("*" * len(password))
+    print_asterisks(password)
 
 def get_password():
     password = input("Enter your password: ")
@@ -10,4 +10,8 @@ def get_password():
         print("Invalid password!!")
         password = input("Enter your password: ")
     return password
+
+def print_asterisks(password):
+    print("*" * len(password))
+
 main()
