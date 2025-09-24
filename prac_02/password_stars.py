@@ -1,10 +1,13 @@
 MIN_LENGTH = 9
 
 def main():
-    pass_word = input("Enter your password: ")
-    while len(pass_word) < MIN_LENGTH:
+    password = get_password()
+    print("*" * len(password))
+
+def get_password():
+    password = input("Enter your password: ")
+    while len(password) < MIN_LENGTH:
         print("Invalid password!!")
-        pass_word = input("Enter your password: ")
-    else:
-        print("*" * len(pass_word))
+        password = input("Enter your password: ")
+    return password
 main()
