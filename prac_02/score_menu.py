@@ -14,7 +14,7 @@ def main():
     is_running = True
 
     while is_running:
-        print(menu)
+        print(MENU)
         choice = input("Choose an option: ").upper()
 
         if choice == "G":
@@ -29,4 +29,28 @@ def main():
         else:
             print("Invalid option. Please choose G, P, S, or Q.")
 
-    main()
+def is_valid_number(input_str):
+    """Check if input is a valid number (integer or float)."""
+    parts = input_str.split('.')
+    if len(parts) > 2:
+        return False
+    for part in parts:
+        if not part.isdigit():
+            return False
+    return True
+
+def get_valid_score():
+    """Get a valid score (0-100 inclusive) using input validation."""
+    valid = False
+    score = 0.0
+    while not valid:
+        user_input = input("Enter score (0-100): ")
+        if is_valid_number(user_input):
+            score = float(user_input)
+            if 0 <= score <= 100:
+                valid = True
+            else:
+                print("Score must be between 0 and 100.")
+        else:
+            print("Invalid input. Please enter a number.")
+    return score
