@@ -18,7 +18,7 @@ def main():
     print(f"Random result: {random_result}")
 
 def determine_result(score):
-    """Determine the result category for a given score."""
+    """Determine the result category for a given score"""
     if score < 0 or score > 100:
         return "Invalid score"
     elif score >= 90:
