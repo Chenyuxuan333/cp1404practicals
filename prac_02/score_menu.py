@@ -25,7 +25,7 @@ def main():
             show_stars(current_score)
         elif choice == "Q":
             print("Thank you for using the program. Goodbye!")
-            is_running = False  # 退出循环
+            is_running = False
         else:
             print("Invalid option. Please choose G, P, S, or Q.")
 
@@ -54,3 +54,24 @@ def get_valid_score():
         else:
             print("Invalid input. Please enter a number.")
     return score
+
+def calculate_result(score):
+    """Determine the result category for a given score."""
+    if score >= 90:
+        return "Excellent"
+    elif score >= 50:
+        return "Passable"
+    else:
+        return "Bad"
+
+def print_result(score):
+    """Print the result category for the given score."""
+    result = calculate_result(score)
+    print(f"Result: {result}")
+
+def show_stars(score):
+    """Print as many stars as the rounded score value."""
+    stars = "*" * round(score)
+    print(stars)
+
+main()
