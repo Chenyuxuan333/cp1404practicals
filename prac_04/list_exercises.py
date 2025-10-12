@@ -16,3 +16,11 @@ print(f"The last number is {last}")
 print(f"The smallest number is {smallest}")
 print(f"The largest number is {largest}")
 print(f"The average of the numbers is {average}")
+
+# Part 2: Woefully inadequate security checker
+usernames = ['jimbo', 'giltson98', 'derekf', 'WhatSup', 'NicolEye', 'swei45', 'BaseInterpreterInterface', 'BaseStdIn', 'Command']
+user_input = input("Enter your username: ")
+if user_input in usernames:
+    print("Access granted")
+else:
+    print("Access denied")
