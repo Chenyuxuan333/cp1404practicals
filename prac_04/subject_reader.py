@@ -12,8 +12,10 @@ def main():
 
 
 def load_data(filename=FILENAME):
-    """Read data from file formatted like: subject,lecturer,number of students."""
+    """Read data from file formatted like: subject,lecturer,number of students.
+    Return a nested list of [subject, lecturer, student_count]."""
     input_file = open(filename)
+    all_data = []
     for line in input_file:
         print(line)  # See what a line looks like
         print(repr(line))  # See what a line really looks like
@@ -21,9 +23,11 @@ def load_data(filename=FILENAME):
         parts = line.split(',')  # Separate the data into its parts
         print(parts)  # See what the parts look like (notice the integer is a string)
         parts[2] = int(parts[2])  # Make the number an integer (ignore PyCharm's warning)
+        all_data.append(parts)
         print(parts)  # See if that worked
         print("----------")
     input_file.close()
+    return all_data
 
 
 main()
