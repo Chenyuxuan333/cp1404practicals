@@ -14,6 +14,6 @@ class Guitar:
     def is_vintage(self):
         return self.get_age() >= 50
 
-    # Define the less-than operator to compare by year
+# Define the less-than operator to compare by year
     def __lt__(self, other):
         return self.year < other.year
