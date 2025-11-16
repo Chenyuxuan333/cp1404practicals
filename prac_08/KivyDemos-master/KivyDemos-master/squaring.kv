@@ -1,0 +1,26 @@
+BoxLayout:
+    orientation: 'vertical'  # Main layout is vertical, containing two sections
+
+    # Top section: horizontal BoxLayout with three widgets
+    BoxLayout:
+        orientation: 'horizontal'
+        spacing: 5
+
+        TextInput:
+            id: input_number
+            hint_text: 'Enter a number'
+            multiline: False
+            input_filter: 'float'  # Allow numeric input
+
+        Button:
+            text: 'Square'
+            on_press: app.handle_calculate(input_number.text)
+
+        Label:
+            id: output_label
+            text: '0.0'
+            color: (1, 0.5, 1, 1)  # Pink (RGBA tuple: red, green, blue, alpha)
+
+    # Bottom section: single Label
+    Label:
+        text: 'Enter a number and press "Square"'
