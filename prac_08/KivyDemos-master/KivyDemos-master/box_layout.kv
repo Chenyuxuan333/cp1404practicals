@@ -1,0 +1,26 @@
+BoxLayout:
+    orientation: 'vertical'
+    padding: 20
+    spacing: 10
+
+    # First button (Clear)
+    Button:
+        text: 'Clear'
+        on_press: app.handle_clear()
+
+    # Text input (replaces "two" button)
+    TextInput:
+        id: input_name
+        text: ''
+        hint_text: 'Type your name here'
+
+    # Third button (Greet)
+    Button:
+        text: 'Greet'
+        on_press: app.handle_greet()
+
+    # Label below third button
+    Label:
+        id: output_label
+        text: 'Enter your name'
+        color: (1, 1, 0, 1)  # Yellow color (RGBA)
